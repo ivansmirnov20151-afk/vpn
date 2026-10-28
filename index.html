@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08131a"><meta name="description" content="ZTEVPN — статус сервиса и проверка лимита подписки.">
+<title>ZTEVPN уже чиним — ZTEVPN</title>
+<style>
+:root{color-scheme:dark;--text:#f3fbff;--muted:#a8bac4;--stroke:#ffffff20;--mint:#8cf6cf;--blue:#9bd6ff;--amber:#ffd27d;--red:#ff7d85;--green:#89f4c4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(ellipse at 10% 0%,#174b4b 0,transparent 35%),radial-gradient(ellipse at 100% 34%,#1b3157 0,transparent 33%),linear-gradient(155deg,#061014,#0b1720 55%,#10172b);background-attachment:fixed}a{color:inherit;text-decoration:none}.wrap{max-width:1050px;margin:auto;padding:24px 20px 48px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:42px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.12em}.logo{display:grid;place-items:center;width:45px;height:45px;border:1px solid #ffffff2a;border-radius:16px;background:linear-gradient(145deg,#b1ffe34c,#4da8ff24);box-shadow:inset 0 1px #ffffff4a,0 12px 32px #0005;color:var(--mint);font-size:15px}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a{padding:10px 13px;border:1px solid var(--stroke);border-radius:999px;background:#ffffff08;color:#dcecf2;font-size:12px;transition:.2s}.nav a:hover,.nav a.active{background:#ffffff15;border-color:#ffffff40}.nav a.active{color:var(--mint)}.hero{max-width:790px;margin:0 auto 24px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid var(--stroke);border-radius:99px;background:#ffffff08;color:var(--state);font-size:11px;letter-spacing:.13em;text-transform:uppercase}.dot{width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 14px currentColor}h1{font-size:clamp(43px,8vw,76px);line-height:.98;letter-spacing:-.065em;margin:21px 0 16px}.grad{background:linear-gradient(100deg,#f5ffff,#a7f4df 45%,#8dc7ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:16px;line-height:1.75;color:var(--muted);max-width:690px;margin:auto}.panel{border:1px solid var(--stroke);border-radius:27px;background:linear-gradient(135deg,#ffffff13,#ffffff05);box-shadow:inset 0 1px #ffffff20,0 24px 75px #0003;backdrop-filter:blur(22px) saturate(1.35);-webkit-backdrop-filter:blur(22px) saturate(1.35)}.status{max-width:850px;margin:26px auto 18px;padding:24px;display:flex;gap:18px;align-items:flex-start}.statusIcon{flex:0 0 54px;width:54px;height:54px;display:grid;place-items:center;border-radius:18px;font-size:25px;background:color-mix(in srgb,var(--state) 12%,transparent);border:1px solid color-mix(in srgb,var(--state) 42%,transparent);color:var(--state)}.label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:2px 0 8px}.status h2{font-size:22px;margin:0 0 9px;letter-spacing:-.025em}.status p{margin:0;color:#b6c6ce;line-height:1.7;font-size:14px}.status-body{min-width:0}.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}.btn{border:1px solid var(--stroke);background:#ffffff0a;border-radius:999px;padding:11px 15px;color:#effaff;font-size:13px;display:inline-flex;align-items:center;justify-content:center;transition:.2s;cursor:pointer}.btn:hover{background:#ffffff17;transform:translateY(-1px)}.btn.primary{background:linear-gradient(120deg,#9bf8d5,#9dd9ff);color:#071319;border:0;font-weight:800}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-top:16px}.section{padding:22px}.section-title{font-size:19px;margin:0 0 7px;letter-spacing:-.025em}.section-desc{font-size:13px;color:var(--muted);line-height:1.65;margin:0 0 17px}.kicker{font-size:10px;letter-spacing:.15em;color:var(--mint);text-transform:uppercase;margin-bottom:9px}.input,textarea{display:block;width:100%;border:1px solid #ffffff24;border-radius:15px;background:#050d13a8;color:var(--text);font:inherit;font-size:13px;padding:14px;outline:none;transition:border-color .2s,box-shadow .2s}.input:focus,textarea:focus{border-color:#8cf6cf80;box-shadow:0 0 0 3px #8cf6cf10}textarea{min-height:111px;resize:vertical;line-height:1.5}.input::placeholder,textarea::placeholder{color:#778d99}.field-label{font-size:12px;color:#dcebf0;margin:0 0 8px;display:block}.or{font-size:11px;color:#8196a1;text-align:center;margin:11px 0}.message{font-size:12px;line-height:1.6;margin:12px 0 0;color:var(--muted)}.message.error{color:#ffafb4}.message.good{color:var(--mint)}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}.stat{padding:14px;border:1px solid #ffffff14;border-radius:17px;background:#ffffff07;min-width:0}.stat .name{font-size:11px;color:var(--muted);margin-bottom:7px}.stat .value{font-size:19px;font-weight:750;letter-spacing:-.025em;overflow-wrap:anywhere}.stat .sub{font-size:11px;color:#8196a1;margin-top:5px;line-height:1.5}.progress{height:7px;border-radius:99px;background:#ffffff12;overflow:hidden;margin-top:15px}.progress span{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#8cf6cf,#9bd6ff);transition:width .3s}.contacts{display:grid;gap:12px}.contact{display:flex;gap:12px;align-items:center;padding:14px;border:1px solid #ffffff15;border-radius:17px;background:#ffffff07}.contact-icon{flex:0 0 39px;width:39px;height:39px;display:grid;place-items:center;border-radius:13px;background:#ffffff0d;color:var(--mint);font-size:17px}.contact b{font-size:13px;display:block;margin-bottom:4px}.contact small{font-size:11px;line-height:1.45;color:var(--muted);display:block}.contact .go{margin-left:auto;color:var(--mint)}.notice{margin-top:16px;padding:17px 19px;color:var(--muted);font-size:12px;line-height:1.7}.notice strong{color:var(--text)}footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:26px;color:#8296a0;font-size:11px}.tiny{font-size:11px;color:#8296a0;line-height:1.6;margin-top:10px}.hide{display:none!important}
+.problem-panel{max-width:850px;margin:18px auto;padding:22px}.problem-text{white-space:pre-wrap;overflow-wrap:anywhere;color:#f1f7fa;font-size:14px;line-height:1.8;border:1px solid #ffffff14;background:#00000019;padding:15px 17px;border-radius:16px}.problem-panel .section-desc{margin-bottom:13px}
+.subscription-locations{margin-top:22px;padding-top:19px;border-top:1px solid #ffffff17}
+.locations-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:7px}
+.location-count{white-space:nowrap;padding:7px 10px;border:1px solid #ffffff20;border-radius:999px;background:#ffffff08;color:var(--mint);font-size:11px}
+.locations-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.location-card{display:flex;align-items:center;min-width:0;min-height:52px;padding:13px 15px;border:1px solid #ffffff17;border-radius:16px;background:linear-gradient(135deg,#ffffff0b,#ffffff04);font-size:14px;font-weight:750;line-height:1.45;overflow-wrap:anywhere}
+@media(max-width:750px){.locations-grid{grid-template-columns:1fr}}
+@media(max-width:750px){.top{align-items:flex-start;flex-direction:column;margin-bottom:32px}.nav{width:100%}.nav a{flex:1;text-align:center;padding:10px 7px}.grid{grid-template-columns:1fr}.status{padding:19px;gap:13px}.statusIcon{flex-basis:45px;width:45px;height:45px;border-radius:15px}.status h2{font-size:19px}.section{padding:19px}.lead{font-size:14px}}@media(max-width:420px){.wrap{padding:19px 13px 35px}.nav a{font-size:11px}.stats{gap:8px}.stat{padding:12px}.stat .value{font-size:17px}.btnrow .btn{flex:1}}
+</style>
+</head>
+<body style="--state:var(--amber);">
+<div class="wrap">
+<header class="top">
+<a class="brand" href="../"><span class="logo">ZT</span><span>ZTEVPN</span></a>
+<nav class="nav" aria-label="Страницы статуса"><a href="../">✓ &nbsp;Работает</a><a href="./" class="active" aria-current="page">↻ &nbsp;Уже чиним</a><a href="../offline/">! &nbsp;Не работает</a></nav>
+</header>
+<main>
+<section class="hero">
+<span class="eyebrow"><span class="dot"></span>ИДУТ ТЕХНИЧЕСКИЕ РАБОТЫ</span>
+<h1><span class="grad">ZTEVPN</span><br>уже чиним</h1>
+<p class="lead">Мы знаем о проблеме и занимаемся восстановлением. Некоторые подключения могут временно не работать.</p>
+</section>
+<section class="panel status" aria-live="polite">
+<div class="statusIcon">↻</div>
+<div class="status-body"><div class="label">Текущий статус · ZTEVPN</div><h2>ZTEVPN уже чиним</h2><p>Пожалуйста, не удаляй профиль без необходимости. Попробуй переподключиться позже и следи за обновлениями статуса на этой странице.</p>
+<div class="btnrow"><a class="btn primary" href="#subscription">Проверить подписку</a><a class="btn" href="https://t.me/ZTE2049" target="_blank" rel="noopener noreferrer">Написать в Telegram</a></div>
+</div></section>
+<section class="panel section problem-panel hide" id="problemsPanel" aria-live="polite">
+<div class="kicker" style="color:var(--amber)">СООБЩЕНИЕ ИЗ ПРОФИЛЯ</div>
+<h2 class="section-title">Проблема и инструкция</h2>
+<p class="section-desc">Этот блок появился автоматически из раздела <code>#problems</code> в GitHub-файле.</p>
+<div class="problem-text" id="problemText"></div>
+</section>
+<div class="grid">
+<section class="panel section" id="subscription">
+<div class="kicker">ПРОФИЛЬ ПОДПИСКИ</div>
+<h2 class="section-title">Сколько трафика осталось?</h2>
+<p class="section-desc">Вставь публичную ссылку на файл профиля в GitHub. Сайт сам прочитает лимит, срок подписки, раздел <code>#problems</code> и доступные страны из VLESS-ссылок.</p>
+<label class="field-label" for="profileUrl">Ссылка на GitHub-файл профиля</label>
+<input class="input" id="profileUrl" type="url" autocomplete="url" placeholder="https://github.com/пользователь/репозиторий/blob/main/profile.txt">
+<div class="btnrow"><button class="btn primary" id="checkBtn" type="button">Загрузить и проверить</button><button class="btn" id="clearBtn" type="button">Очистить</button></div>
+<p class="message" id="parseMessage" role="status">Нужна публичная ссылка на сам файл в GitHub. Содержимое профиля вставлять не нужно. Локации появятся после чтения VLESS-ссылок из файла.</p>
+<div id="results" class="hide">
+<div class="stats">
+<div class="stat"><div class="name">Общий лимит</div><div class="value" id="totalVal">—</div><div class="sub">Заданный объём</div></div>
+<div class="stat"><div class="name">Осталось</div><div class="value" id="remainingVal">—</div><div class="sub" id="remainingSub">Доступный трафик</div></div>
+<div class="stat"><div class="name">Использовано</div><div class="value" id="usedVal">—</div><div class="sub" id="usageSub">Отправлено + получено</div></div>
+<div class="stat"><div class="name">Подписка до</div><div class="value" id="expireVal">—</div><div class="sub" id="expireSub">Дата окончания</div></div>
+</div><div class="progress"><span id="progressBar"></span></div><p class="message" id="detailMessage"></p>
+</div>
+<div class="subscription-locations hide" id="subscriptionLocations" aria-live="polite">
+<div class="locations-heading"><h3 class="section-title">Доступные локации</h3><span class="location-count" id="locationCount">0</span></div>
+<p class="section-desc">Страны прочитаны из VLESS-ссылок в загруженном GitHub-профиле. Адреса и конфигурации не отображаются.</p>
+<div class="locations-grid" id="locationList"></div>
+<p class="message" id="locationMessage"></p>
+</div>
+</section>
+<aside class="panel section">
+<div class="kicker">ПОДДЕРЖКА</div><h2 class="section-title">Нужен дополнительный лимит?</h2>
+<p class="section-desc">Напиши владельцу ZTEVPN в личные сообщения и укажи, что хочешь расширить лимит трафика.</p>
+<div class="contacts">
+<a class="contact" href="https://t.me/ZTE2049" target="_blank" rel="noopener noreferrer"><span class="contact-icon">↗</span><span><b>Telegram · @ZTE2049</b><small>Открыть личные сообщения</small></span><span class="go">→</span></a>
+<a class="contact" href="https://max.ru/" target="_blank" rel="noopener noreferrer"><span class="contact-icon">✉</span><span><b>MAX · ZTE2049</b><small>Открой MAX и найди пользователя ZTE2049</small></span><span class="go">→</span></a>
+</div>
+<div class="notice panel" style="margin-top:14px"><strong>Совет:</strong> отправляй только ссылку подписки, которой можно делиться, или строку <code>subscription-userinfo</code>. Не публикуй приватные конфигурации и ключи доступа.</div>
+</aside>
+</div>
+<section class="panel notice"><strong>Информация о статусе.</strong> Эта страница показывает выбранное владельцем состояние, а не автоматическую техническую проверку серверов. Команда занимается восстановлением сервиса.<br>Поддерживаются публичные GitHub-ссылки на сам файл (GitHub Blob, Raw или GitHub API). Приватные репозитории без авторизации прочитать нельзя.</section>
+</main>
+<footer><span>© <span id="year"></span> ZTEVPN · проект ZTE2049</span><span>Статус: Уже чиним</span></footer>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+$('year').textContent = new Date().getFullYear();
+
+function extractVlessLocations(source) {
+  if (!source) return [];
+  const locations = [];
+  const seenCountries = new Set();
+  for (const line of String(source).replace(/\r/g, '').split('\n')) {
+    const match = line.match(/vless:\/\/.*$/i);
+    if (!match) continue;
+    const uri = match[0].trim().replace(/^['"`]+/, '').replace(/[ '"`,;]+$/, '');
+    try {
+      const url = new URL(uri);
+      if (url.protocol !== 'vless:' || !url.hostname) continue;
+      let label = '🌐 Неизвестная страна';
+      try { label = decodeURIComponent(url.hash.slice(1)).trim() || label; } catch (_) {}
+      const key = label.toLocaleLowerCase('ru-RU');
+      if (seenCountries.has(key)) continue;
+      seenCountries.add(key);
+      locations.push({ label });
+    } catch (_) {}
+  }
+  return locations;
+}
+function renderLocations(items, fromGithub = false) {
+  const panel = $('subscriptionLocations');
+  const list = $('locationList');
+  const count = $('locationCount');
+  const message = $('locationMessage');
+  list.replaceChildren();
+  const locations = (items || []).map(item => typeof item === 'string' ? {label: item} : item);
+  if (!locations.length) {
+    panel.classList.add('hide');
+    count.textContent = '0';
+    message.textContent = '';
+    return;
+  }
+  count.textContent = `${locations.length} ${locations.length === 1 ? 'локация' : (locations.length >= 2 && locations.length <= 4 ? 'локации' : 'локаций')}`;
+  for (const location of locations) {
+    const card = document.createElement('div');
+    card.className = 'location-card';
+    card.textContent = location.label || '🌐 Неизвестная страна';
+    list.appendChild(card);
+  }
+  message.textContent = fromGithub
+    ? 'Локации прочитаны из файла подписки. Конфигурации и адреса серверов здесь не показываются.'
+    : '';
+  panel.classList.remove('hide');
+}
+
+function extractInfo(source) {
+  if (!source) return null;
+  const text = String(source).replace(/\r/g, '\n');
+  let candidates = [text];
+  const headerLine = text.match(/(?:#\s*)?subscription-userinfo\s*:\s*([^\n\r]+)/i);
+  if (headerLine) candidates.unshift(headerLine[1]);
+  const params = ['upload','download','total','expire'];
+  for (const candidate of candidates) {
+    const values = {};
+    for (const key of params) {
+      const normalized = candidate.replace(/\s+/g, '');
+      const rx = new RegExp(key + '=([0-9]+)', 'i');
+      const m = normalized.match(rx);
+      if (m) values[key] = Number(m[1]);
+    }
+    if (params.some(k => Object.prototype.hasOwnProperty.call(values,k)) && (values.total !== undefined || values.expire !== undefined || values.upload !== undefined || values.download !== undefined)) return values;
+  }
+  // Some subscriptions are returned as Base64 text.
+  const compact = text.trim().replace(/\s+/g, '');
+  if (compact.length > 24 && /^[A-Za-z0-9_+\/=.-]+$/.test(compact)) {
+    try {
+      let b64 = compact.replace(/-/g,'+').replace(/_/g,'/');
+      b64 += '='.repeat((4-b64.length%4)%4);
+      const decoded = atob(b64);
+      if (/subscription-userinfo|(?:upload|download|total|expire)\s*=/i.test(decoded)) return extractInfo(decoded);
+    } catch (_) {}
+  }
+  return null;
+}
+function extractProblems(source) {
+  if (!source) return null;
+  const lines = String(source).replace(/\r\n?/g, '\n').split('\n');
+  const markerPattern = /^\s*#\s*problems\b\s*:?\s*(.*)$/i;
+  const start = lines.findIndex(line => markerPattern.test(line));
+  if (start < 0) return null;
+  const markerMatch = lines[start].match(markerPattern);
+  const content = [];
+  if (markerMatch && markerMatch[1] && markerMatch[1].trim()) content.push(markerMatch[1].trim());
+  const nextMetadata = /^\s*#\s*(?:profile-title|profile-update-interval|date\/time|announce|subscription-userinfo)\s*:/i;
+  for (let i = start + 1; i < lines.length; i++) {
+    const line = lines[i];
+    if (nextMetadata.test(line) || /^\s*vless:\/\//i.test(line)) break;
+    // Profile comments in this section are readable text, not markup.
+    content.push(line.replace(/^\s*#\s?/, '').replace(/\s+$/, ''));
+  }
+  const result = content.join('\n').trim();
+  return result || 'В профиле присутствует раздел #problems, но описание проблемы пока не указано.';
+}
+function renderProblems(text) {
+  const panel = $('problemsPanel');
+  const content = $('problemText');
+  if (text) {
+    content.textContent = text;
+    panel.classList.remove('hide');
+  } else {
+    content.textContent = '';
+    panel.classList.add('hide');
+  }
+}
+function fmtBytes(bytes) {
+  if (!Number.isFinite(bytes) || bytes < 0) return '—';
+  if (bytes < 1024*1024) return (bytes/1024).toLocaleString('ru-RU',{maximumFractionDigits:1})+' КБ';
+  const gb = bytes/(1024**3);
+  if (gb >= 0.1) return gb.toLocaleString('ru-RU',{maximumFractionDigits:2})+' ГБ';
+  return (bytes/(1024**2)).toLocaleString('ru-RU',{maximumFractionDigits:1})+' МБ';
+}
+function render(info) {
+  const upload = Math.max(0, Number(info.upload || 0));
+  const download = Math.max(0, Number(info.download || 0));
+  const used = upload + download;
+  const totalKnown = Number.isFinite(info.total) && info.total > 0;
+  const remaining = totalKnown ? Math.max(0, info.total-used) : null;
+  $('results').classList.remove('hide');
+  $('totalVal').textContent = totalKnown ? fmtBytes(info.total) : (info.total === 0 ? 'Безлимит / не задан' : 'Не указан');
+  $('remainingVal').textContent = totalKnown ? fmtBytes(remaining) : '—';
+  $('remainingSub').textContent = totalKnown ? (remaining===0 ? 'Лимит исчерпан' : 'Доступно к использованию') : 'В профиле нет общего лимита';
+  $('usedVal').textContent = fmtBytes(used);
+  $('usageSub').textContent = 'Отправлено: '+fmtBytes(upload)+' · Получено: '+fmtBytes(download);
+  const expire = Number(info.expire || 0);
+  let expireDate = null;
+  if (expire > 0) expireDate = new Date(expire*1000);
+  if (expireDate && !Number.isNaN(expireDate.getTime())) {
+    $('expireVal').textContent = expireDate.toLocaleDateString('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric'});
+    $('expireSub').textContent = 'до '+expireDate.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'})+' (местное время)';
+  } else { $('expireVal').textContent='Не указана'; $('expireSub').textContent='В профиле нет даты окончания'; }
+  const percent = totalKnown ? Math.min(100, Math.max(0, used/info.total*100)) : 0;
+  $('progressBar').style.width = percent+'%';
+  const details=[];
+  details.push('Использовано '+(totalKnown ? percent.toLocaleString('ru-RU',{maximumFractionDigits:1})+'% лимита.' : 'трафика: '+fmtBytes(used)+'.'));
+  if (expireDate) details.push(expireDate.getTime() < Date.now() ? 'Срок подписки истёк.' : 'До даты окончания подписки ещё есть время.');
+  if (totalKnown && used >= info.total) details.push('Общий лимит трафика исчерпан или превышен.');
+  $('detailMessage').textContent = details.join(' ');
+}
+function setMessage(text, type='') { $('parseMessage').className = 'message'+(type ? ' '+type : ''); $('parseMessage').textContent = text; }
+function decodeBase64Text(value) {
+  const compact = String(value || '').replace(/\s+/g, '');
+  const binary = atob(compact.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - compact.length % 4) % 4));
+  const bytes = Uint8Array.from(binary, ch => ch.charCodeAt(0));
+  try { return new TextDecoder('utf-8').decode(bytes); }
+  catch (_) { return binary; }
+}
+function githubTargets(inputUrl) {
+  const u = new URL(inputUrl);
+  const host = u.hostname.toLowerCase();
+  const targets = [];
+  const add = (url, kind = 'text') => { if (!targets.some(t => t.url === url)) targets.push({ url, kind }); };
+  if (host === 'github.com') {
+    const p = u.pathname.split('/').filter(Boolean).map(decodeURIComponent);
+    if (p.length >= 5 && (p[2] === 'blob' || p[2] === 'raw')) {
+      const [owner, repo, mode, branch, ...fileParts] = p;
+      const filePath = fileParts.join('/');
+      if (filePath) {
+        if (mode === 'blob') {
+          const api = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${fileParts.map(encodeURIComponent).join('/')}?ref=${encodeURIComponent(branch)}`;
+          add(api, 'github-api');
+        }
+        add(`https://raw.githubusercontent.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/${[branch, ...fileParts].map(encodeURIComponent).join('/')}`, 'text');
+      }
+    }
+    add(u.href, 'text');
+  } else if (host === 'raw.githubusercontent.com') {
+    const p = u.pathname.split('/').filter(Boolean).map(decodeURIComponent);
+    if (p.length >= 5 && p[2] === 'refs' && (p[3] === 'heads' || p[3] === 'tags')) {
+      const owner = p[0], repo = p[1], refType = p[3], branch = p[4], fileParts = p.slice(5);
+      if (fileParts.length) {
+        const api = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${fileParts.map(encodeURIComponent).join('/')}?ref=${encodeURIComponent(branch)}`;
+        add(api, 'github-api');
+      }
+    } else if (p.length >= 4) {
+      const owner = p[0], repo = p[1], branch = p[2], fileParts = p.slice(3);
+      const api = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${fileParts.map(encodeURIComponent).join('/')}?ref=${encodeURIComponent(branch)}`;
+      add(api, 'github-api');
+    }
+    add(u.href, 'text');
+  } else if (host === 'api.github.com') {
+    add(u.href, u.pathname.includes('/contents/') ? 'github-api' : 'text');
+  } else {
+    throw new Error('not github');
+  }
+  return targets;
+}
+function parseFetchedBody(body, kind) {
+  if (kind === 'github-api') {
+    let json;
+    try { json = JSON.parse(body); } catch (_) { return body; }
+    if (json && typeof json.content === 'string' && json.encoding === 'base64') {
+      try { return decodeBase64Text(json.content); } catch (_) { return body; }
+    }
+    return body;
+  }
+  // A few providers return the complete subscription payload as base64.
+  const trimmed = String(body || '').trim();
+  if (trimmed && !/(?:subscription-userinfo|(?:upload|download|total|expire)\s*=)/i.test(trimmed) && /^[A-Za-z0-9_+\/=.-]+$/.test(trimmed.replace(/\s+/g, '')) && trimmed.replace(/\s+/g, '').length > 24) {
+    try {
+      const decoded = decodeBase64Text(trimmed);
+      if (/(?:subscription-userinfo|(?:upload|download|total|expire)\s*=|vless:\/\/|#problems\b)/i.test(decoded)) return decoded;
+    } catch (_) {}
+  }
+  return body;
+}
+async function checkSubscription() {
+  const urlText = $('profileUrl').value.trim();
+  $('results').classList.add('hide');
+  renderProblems(null);
+  renderLocations(null);
+  if (!urlText) {
+    setMessage('Сначала вставь публичную ссылку на файл профиля в GitHub.', 'error');
+    return;
+  }
+  let input;
+  try {
+    input = new URL(urlText);
+    if (input.protocol !== 'https:') throw new Error('bad scheme');
+    const allowed = ['github.com', 'raw.githubusercontent.com', 'api.github.com'];
+    if (!allowed.includes(input.hostname.toLowerCase())) throw new Error('not github');
+  } catch (_) {
+    setMessage('Нужна корректная HTTPS-ссылка на публичный файл GitHub (github.com, raw.githubusercontent.com или api.github.com).', 'error');
+    return;
+  }
+
+  const btn = $('checkBtn');
+  const originalLabel = 'Загрузить и проверить';
+  btn.disabled = true;
+  btn.textContent = 'Читаю GitHub…';
+  setMessage('Загружаю GitHub-файл, ищу subscription-userinfo и раздел #problems…');
+  const targets = githubTargets(input.href);
+  let lastError = '';
+  try {
+    for (const target of targets) {
+      try {
+        const response = await fetch(target.url, {
+          method: 'GET', cache: 'no-store', credentials: 'omit',
+          headers: target.kind === 'github-api' ? { 'Accept': 'application/vnd.github+json' } : {}
+        });
+        if (!response.ok) {
+          lastError = `HTTP ${response.status}`;
+          continue;
+        }
+        const header = response.headers.get('subscription-userinfo') || '';
+        const rawBody = await response.text();
+        const body = parseFetchedBody(rawBody, target.kind);
+        const info = extractInfo(header) || extractInfo(body);
+        const problemText = extractProblems(body);
+        const locations = extractVlessLocations(body);
+        if (problemText) renderProblems(problemText);
+        if (locations.length) renderLocations(locations, true);
+        if (info) render(info);
+        if (info || problemText || locations.length) {
+          const from = target.kind === 'github-api' ? 'GitHub API' : 'загруженного файла GitHub';
+          if (info && problemText && locations.length) {
+            setMessage(`Файл прочитан из ${from}: данные подписки, #problems и доступные локации (${locations.length}).`, 'good');
+          } else if (info && problemText) {
+            setMessage(`Файл прочитан из ${from}. Найдены данные подписки и раздел #problems.`, 'good');
+          } else if (info && locations.length) {
+            setMessage(`Файл прочитан из ${from}. Данные подписки и доступные локации (${locations.length}) обновлены. #problems не найден.`, 'good');
+          } else if (problemText && locations.length) {
+            setMessage(`Файл прочитан из ${from}: показаны #problems и доступные локации (${locations.length}).`, 'good');
+          } else if (info) {
+            setMessage(`Файл прочитан из ${from}. Раздел #problems и VLESS-локации в этом файле не найдены.`, 'good');
+          } else if (locations.length) {
+            setMessage(`Файл прочитан из ${from}. Найдены доступные локации: ${locations.length}; лимит подписки не найден.`, 'good');
+          } else {
+            setMessage(`Файл прочитан из ${from}. Раздел #problems показан выше, но данные лимита subscription-userinfo не найдены.`, 'good');
+          }
+          return;
+        }
+        lastError = 'В файле не найдены subscription-userinfo, #problems или VLESS-ссылки';
+      } catch (err) {
+        lastError = err && err.message ? err.message : 'Ошибка доступа к файлу';
+      }
+    }
+    setMessage('Не удалось прочитать данные по этой ссылке. Проверь, что ссылка ведёт на сам публичный файл GitHub, а в нём есть #subscription-userinfo и/или #problems. ' + (lastError ? `Причина: ${lastError}.` : ''), 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+  }
+}
+$('checkBtn').addEventListener('click', checkSubscription);
+$('profileUrl').addEventListener('keydown', event => { if (event.key === 'Enter') checkSubscription(); });
+$('clearBtn').addEventListener('click', () => {
+  $('profileUrl').value = '';
+  $('results').classList.add('hide');
+  renderProblems(null);
+  renderLocations(null);
+  setMessage('Поле очищено. Вставь ссылку на публичный GitHub-файл профиля.');
+});
+</script>
+</body>
+</html>
